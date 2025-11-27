@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cultural Attire Showcase</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Georgia, serif;
+    background: #f7f7f7;
+    color: #0a2e0a;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0b3d0b;
+    padding: 60px 40px;
+    color: white;
+}
+
+.hero-text {
+    max-width: 50%;
+}
+
+.hero-text h1 {
+    font-size: 2.8rem;
+    margin: 0;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.hero-img img {
+    width: 350px;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 4px solid white;
+}
+
+.section {
+    padding: 40px 30px;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.card {
+    background: white;
+    border: 2px solid #0a2e0a;
+    border-radius: 12px;
+    padding: 20px;
+    transition: .4s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card h3 {
+    margin: 0 0 10px 0;
+}
+
+.card p {
+    line-height: 1.4;
+}
+
+.testimonials {
+    background: #0b3d0b;
+    padding: 50px 20px;
+    color: white;
+}
+
+.testimonials h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.quote {
+    max-width: 700px;
+    background: rgba(255,255,255,0.1);
+    margin: 15px auto;
+    padding: 20px;
+    border-radius: 10px;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+.footer {
+    background: #0a2e0a;
+    color: white;
+    text-align: center;
+    padding: 18px;
+    font-size: 0.9rem;
+}
+</style>
+</head>
+
+<body>
+
+    <iframe id="nav-frame" src="nav.html" ></iframe>
+
+
+<div class="hero">
+    <div class="hero-text">
+        <h1>Cultural Attire, Campus Pride</h1>
+        <p>Where heritage meets modern expression. Explore the identity, dignity, and vibrance woven into every thread worn across campus.</p>
+    </div>
+    <div class="hero-img">
+        <img src="attire.jpeg" alt="Cultural Attire">
+    </div>
+</div>
+
+<div class="section">
+    <h2>Campus Cultural Attire</h2>
+    <p>Every outfit is a story, every print a legacy. Step into styles that honor tradition while embracing creativity.</p>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Heritage Wear</h3>
+            <p>Bold, expressive, and deeply rooted in identity. Perfect for cultural events, celebrations, and campus showcases.</p>
+        </div>
+
+        <div class="card">
+            <h3>Modern Fusion</h3>
+            <p>A blend of modern comfort and traditional inspiration. Designed for students who celebrate culture daily.</p>
+        </div>
+
+        <div class="card">
+            <h3>Festival Outfits</h3>
+            <p>Worn proudly during cultural week, pageants, department events, and heritage exhibitions.</p>
+        </div>
+
+        <div class="card">
+            <h3>Signature Prints</h3>
+            <p>Patterns and colors that symbolize pride, unity, and the heartbeat of diverse backgrounds.</p>
+        </div>
+
+    </div>
+</div>
+
+<div class="testimonials">
+    <h2>Voices of Pride</h2>
+
+    <div class="quote">
+        “Wearing my cultural attire on campus makes me feel seen, rooted, and connected.” – Student, 3rd Year
+    </div>
+
+    <div class="quote">
+        “It’s more than clothes. It’s our identity being celebrated in the open.” – Cultural Week Performer
+    </div>
+
+    <div class="quote">
+        “Every fabric carries a story… and here, those stories are honored.” – Department Representative
+    </div>
+</div>
+
+<div class="footer">
+    © 2025 Campus Cultural Attire Showcase. All Rights Reserved.
+</div>
+
+
+  <iframe id="footer-frame" src="footer.html" ></iframe>
+
+
+</body>
+</html>

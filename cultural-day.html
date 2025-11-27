@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cultural Week - Page 3</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: linear-gradient(to bottom right, rgba(144, 238, 144, 0.6), rgba(240, 255, 240, 0.6)), url('images/bg.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .main-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-items: center;
+      gap: 20px;
+      padding-bottom: 30px;
+    }
+
+    .intro, .gallery, .quotes {
+      width: 90%;
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      background: white;
+      border: 1px solid #cfe8cf;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+
+    .quotes {
+      position: static;
+      width: 90%;
+    }
+
+    .gallery .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .box {
+      border: 2px dashed #a5cfa5;
+      height: 120px;
+      width: 100%;
+      text-align: center;
+      vertical-align: middle;
+      color: #5c7d5c;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .quote {
+      background: #f2fff2;
+      padding: 10px;
+      border-left: 4px solid #65db25;
+      margin: 10px 0;
+      font-style: italic;
+      border-radius: 6px;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid #cceccc;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+      object-fit: cover;
+    }
+
+    footer {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.7);
+      padding: 12px;
+      margin-top: 30px;
+      border-top: 1px solid #cceccc;
+    }
+  </style>
+</head>
+<body>
+
+
+
+  <header>
+    <h1>Cultural Week</h1>
+    <pre>A moment to embrace unity. 
+         encourages everyone to participate, observe, and enjoy.
+         It reminds us that culture is not just practiced, 
+         but lived, shared, and celebrated together.
+        </pre>
+  </header>
+
+  <div class="main-container">
+    <section class="intro">
+      <h2>About culture</h2>
+      <pre>
+        This day focuses on cultural performances, creativity, and unity. You can edit this
+        paragraph and add more information about the activities of the day.
+      </pre>
+
+      <pre>This day focuses on learning and appreciating the diversity within our community.
+          Whether through exhibitions, cultural performances, or interactive sessions, 
+          every activity highlights the beauty of different backgrounds.
+      </pre>
+      
+    </section>
+
+    <section class="gallery">
+      <h2>Photo Table</h2>
+      <div class="photo-grid">
+        <div class="box"><img src="/pic1.png" alt="Cultural Photo 1"></div>
+        <div class="box"><img src="/pic2.png" alt="Cultural Photo 4"></div>
+        <div class="box"><img src="/pic3.png" alt="Cultural Photo 6"></div>
+      </div>
+    </section>
+
+    <section class="quotes">
+      <h2>Quotes Section</h2>
+      <p class="quote">"Culture is the art of living together."</p>
+      <p class="quote">"Every culture has a story worth celebrating."</p>
+      <p class="quote">"Unity in diversity strengthens our bonds."</p>  <!-- Changed to fit the theme -->
+    </section>
+  </div>
+
+  <footer>
+    <p>© 2025 Cultural Week Project</p>
+  </footer>
+
+</body>
+</html>

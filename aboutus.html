@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About the Department of Applied Community Development Studies at Egerton University">
+  <title>About Us - Egerton University</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="navAndFooter.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Segoe+UI:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* Page-specific styles using global variables */
+    :root {
+      --section-padding: 5rem 0;
+    }
+
+    .skip-to-content {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--egerton-gold);
+      color: var(--egerton-green-darker);
+      padding: 0.8rem 1.5rem;
+      font-weight: 700;
+      z-index: 10000;
+      transition: var(--transition-normal);
+    }
+    
+    .skip-to-content:focus {
+      top: 10px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--egerton-green-light) 0%, var(--egerton-green-base) 100%);
+      color: white;
+      padding: var(--section-padding);
+      position: relative;
+      overflow: hidden;
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(212,175,55,0.08) 0%, transparent 70%);
+      z-index: 0;
+    }
+
+    .slider-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 0 2rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .text-side {
+      padding: 1.5rem 0;
+    }
+
+    .text-side h1 {
+      font-family: var(--font-primary);
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+      position: relative;
+      max-width: 85%;
+    }
+
+    .text-side h1::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: var(--egerton-gold);
+      border-radius: 2px;
+    }
+
+    .text-side p {
+      font-size: clamp(1.1rem, 2vw, 1.3rem);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      max-width: 95%;
+      opacity: 0.95;
+    }
+
+    .nav-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .slider-btn {
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      color: white;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: var(--transition-normal);
+      display: none; /* Hidden since we're doing auto-rotate */
+    }
+
+    .image-side {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      height: 500px;
+      transform: perspective(1000px) rotateY(3deg);
+      transition: transform 0.6s ease;
+    }
+
+    .image-side:hover {
+      transform: perspective(1000px) rotateY(0deg);
+    }
+
+    .slides {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* CSS-only auto-rotating slider */
+    .slide:nth-child(1) {
+      background-image: url('about4.jpeg');
+      animation: slideShow 21s ease-in-out infinite 0s;
+    }
+    
+    .slide:nth-child(2) {
+      background-image: url('about5.jpeg');
+      animation: slideShow 21s ease-in-out infinite 7s;
+    }
+    
+    .slide:nth-child(3) {
+      background-image: url('about1.jpeg');
+      animation: slideShow 21s ease-in-out infinite 14s;
+    }
+    
+    @keyframes slideShow {
+      0% { opacity: 0; }
+      5% { opacity: 1; }
+      25% { opacity: 1; }
+      30% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+
+    .section {
+      padding: var(--section-padding);
+    }
+
+    .about-content {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 20px;
+      padding: 2.5rem;
+      box-shadow: var(--shadow-lg);
+      transition: var(--transition-normal);
+    }
+
+    .about-content:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .about-content h2 {
+      color: var(--egerton-green-base);
+      font-family: var(--font-primary);
+      font-size: clamp(1.8rem, 3.5vw, 2.3rem);
+      margin: 1.8rem 0 1.2rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+
+    .about-content h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 70px;
+      height: 4px;
+      background: var(--egerton-gold);
+      border-radius: 2px;
+    }
+
+    .about-content p {
+      margin-bottom: 1.2rem;
+      line-height: 1.8;
+      font-size: 1.1rem;
+      color: #444;
+    }
+
+    .about-content ul {
+      padding-left: 1.8rem;
+      margin: 1.5rem 0;
+    }
+
+    .about-content li {
+      margin-bottom: 0.8rem;
+      line-height: 1.7;
+      position: relative;
+      padding-left: 1.2rem;
+    }
+
+    .about-content li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--egerton-gold);
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .contact-card {
+      max-width: 650px;
+      margin: 3rem auto;
+      background: linear-gradient(135deg, var(--egerton-green-base) 0%, var(--egerton-green-darker) 100%);
+      color: white;
+      border-radius: 20px;
+      padding: 2.5rem;
+      text-align: center;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(212,175,55,0.1) 0%, transparent 70%);
+      z-index: 0;
+    }
+
+    .contact-card h3 {
+      font-family: var(--font-primary);
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: var(--egerton-gold);
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-card p {
+      font-size: 1.2rem;
+      margin: 1rem 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-card a {
+      color: var(--egerton-gold);
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition-normal);
+      position: relative;
+      z-index: 1;
+      display: inline-block;
+    }
+
+    .contact-card a:hover {
+      text-decoration: underline;
+      transform: scale(1.05);
+    }
+
+    .contact-card a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: var(--egerton-gold);
+      opacity: 0;
+      transition: var(--transition-normal);
+    }
+
+    .contact-card a:hover::after {
+      opacity: 1;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 1024px) {
+      .slider-wrapper {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      
+      .text-side p {
+        max-width: 100%;
+      }
+      
+      .image-side {
+        order: -1;
+        max-width: 90%;
+        margin: 0 auto;
+        height: 400px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      :root {
+        --section-padding: 3rem 0;
+      }
+      
+      .hero {
+        min-height: auto;
+        padding: 3rem 0;
+      }
+      
+      .text-side h1 {
+        font-size: 2.2rem;
+        max-width: 100%;
+      }
+      
+      .image-side {
+        height: 350px;
+      }
+      
+      .about-content,
+      .contact-card {
+        padding: 1.8rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .image-side {
+        height: 280px;
+      }
+      
+      .contact-card h3 {
+        font-size: 1.7rem;
+      }
+      
+      .contact-card p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+  
+  <header class="nav-container">
+    <div class="container">
+      <nav aria-label="Main navigation">
+        <div class="logo-section">
+          <img src="logo.png" alt="Egerton University Logo" width="40" height="40">
+          <span class="uni-name">Egerton University</span>
+        </div>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="aboutus.html" aria-current="page">About</a>
+          <a href="art.html">Arts</a>
+          <a href="attire.html">Attire</a>
+          <a href="cultural-day.html">Cultural Day</a>
+          <a href="tickets.html">Tickets</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero section--light">
+      <div class="container">
+        <div class="slider-wrapper">
+          <div class="text-side">
+            <h1>About Our Department</h1>
+            <p>The Department of Applied Community Development Studies empowers students through innovation, outreach, and cultural engagement. We nurture individuals who create meaningful impact within communities while celebrating the diverse cultural identities at Egerton University.</p>
+            <div class="nav-buttons">
+              <button aria-label="Previous slide" class="slider-btn">&laquo;</button>
+              <button aria-label="Next slide" class="slider-btn">&raquo;</button>
+            </div>
+          </div>
+          <div class="image-side">
+            <div class="slides" role="region" aria-label="Image carousel">
+              <div class="slide" aria-label="Students participating in community development activities"></div>
+              <div class="slide" aria-label="Cultural celebration at Egerton University"></div>
+              <div class="slide" aria-label="Community engagement workshop"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="about-content card">
+          <h2>Who We Are</h2>
+          <p>Welcome to the Department of Applied Community Development Studies. Our mission is to create a dynamic space where students grow academically while engaging deeply with culture, identity, and community expression.</p>
+          <p>Through participation in cultural events, festivals, creative showcases, and traditional exhibitions, we encourage students to connect with their roots while learning from the diverse cultures represented within Egerton University.</p>
+          <p>We believe cultural involvement strengthens unity, inspires creativity, and builds confident leaders who understand the power of diversity in shaping society.</p>
+          
+          <h2>What Students Gain</h2>
+          <ul>
+            <li>Opportunities to participate in cultural week, art displays, music, and dance activities</li>
+            <li>Platforms to express creativity, talent, and personal heritage</li>
+            <li>Exposure to traditions from across Kenya and beyond</li>
+            <li>A profound sense of belonging, identity, and community connection</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="contact-card card">
+          <h3>Contact Information</h3>
+          <p><strong>Email:</strong> <a href="mailto:jeffersonchirp@gmail.com">jeffersonchirp@gmail.com</a></p>
+          <p><strong>Phone:</strong> <a href="tel:+254797794518">+254 797 794 518</a></p>
+          <p><strong>Office:</strong> Department of Applied Community Development Studies, TB Block, Egerton University</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-left">
+          <img src="logo.png" alt="Egerton University Logo" width="50" height="50">
+          <div class="footer-info">
+            <h3>Egerton University</h3>
+            <p>Njoro, Nakuru County, Kenya</p>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="footer-icons">
+            <a href="https://instagram.com/egertonuniversity" target="_blank" aria-label="Instagram">
+              <img src="https://cdn.simpleicons.org/instagram" alt="Instagram" width="24" height="24">
+            </a>
+            <a href="https://wa.me/254703024000" target="_blank" aria-label="WhatsApp">
+              <img src="https://cdn.simpleicons.org/whatsapp" alt="WhatsApp" width="24" height="24">
+            </a>
+            <a href="https://t.me/egertonuniversity" target="_blank" aria-label="Telegram">
+              <img src="https://cdn.simpleicons.org/telegram" alt="Telegram" width="24" height="24">
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Egerton University — All rights reserved.</p>
+        <p class="credit">Department of Applied Community Development Studies</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

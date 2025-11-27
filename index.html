@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Egerton University Department of Applied Community Development Studies - Arts and Culture">
+  <title>Egerton University | Arts and Culture</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- <style>
+    /* Page-specific styles for index.html - Consistent with other pages */
+    :root {
+      --egerton-green-dark: #0a4c27;
+      --egerton-green-medium: #046d2a;
+      --egerton-green-light: #eef3ee;
+      --egerton-green-accent: #4caf50;
+      --neutral-white: #ffffff;
+      --neutral-light: #f5f5f5;
+      --neutral-gray: #444444;
+      --neutral-dark: #222222;
+      --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+      --shadow-md: 0 4px 10px rgba(0,0,0,0.1);
+      --shadow-lg: 0 8px 24px rgba(0,0,0,0.15);
+      --transition-normal: 0.3s ease;
+    }
+
+    main {
+      margin: 0;
+    }
+
+    /* Hero section - text right, image left */
+    .hero-split {
+      position: relative;
+      display: flex;
+      min-height: 80vh;
+      color: var(--neutral-white);
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3));
+      overflow: hidden;
+    }
+
+    .hero-content {
+      display: flex;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .hero-image {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .hero-image img {
+      max-width: 100%;
+      max-height: 80vh;
+      border-radius: 15px;
+      box-shadow: var(--shadow-lg);
+      border: 4px solid var(--neutral-white);
+    }
+
+    .hero-text {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 2rem;
+      z-index: 1;
+    }
+
+    .hero-text h1 {
+      font-size: 2.8rem;
+      font-weight: bold;
+      margin-bottom: 0.5em;
+      line-height: 1.2;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    }
+
+    .hero-text h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: var(--egerton-green-accent);
+      text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+
+    .hero-text p {
+      font-size: 1.3rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      max-width: 600px;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    }
+
+    .hero-tagline {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--egerton-green-light);
+      margin-bottom: 1.5rem;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    }
+
+    /* About section cards */
+    .about-section {
+      padding: 4rem 1rem;
+      background: var(--neutral-light);
+    }
+
+    .about-section .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .about-title {
+      text-align: center;
+      margin-bottom: 3rem;
+      color: var(--egerton-green-dark);
+    }
+
+    .about-list {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      padding: 0;
+      list-style: none;
+    }
+
+    .about-card {
+      background: var(--neutral-white);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+      text-align: center;
+      position: relative;
+    }
+
+    .about-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .about-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--egerton-green-dark);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform var(--transition-normal);
+    }
+
+    .about-card:hover::before {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    .about-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .about-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .about-card a {
+      display: block;
+      padding: 1.5rem;
+      color: var(--neutral-dark);
+      text-decoration: none;
+    }
+
+    .about-card h3 {
+      color: var(--egerton-green-dark);
+      margin: 0.5rem 0;
+      font-size: 1.4rem;
+    }
+
+    .about-card p {
+      color: var(--neutral-gray);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* About slider section */
+    .about-slider-section {
+      padding: 4rem 1rem;
+      background: var(--egerton-green-light);
+    }
+
+    .slider-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      background: var(--neutral-white);
+      border-radius: 15px;
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      height: auto;
+      max-height: 500px;
+    }
+
+    .text-side {
+      flex: 1;
+      padding: 2rem;
+      min-width: 300px;
+    }
+
+    .text-side h2 {
+      color: var(--egerton-green-dark);
+      margin-top: 0;
+      font-size: 2rem;
+    }
+
+    .text-side p {
+      color: var(--neutral-gray);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .image-side {
+      flex: 1;
+      min-width: 300px;
+      height: 400px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 0 15px 15px 0;
+    }
+
+    .slides {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .slides img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    #as1:checked ~ .image-side .slides .a1,
+    #as2:checked ~ .image-side .slides .a2,
+    #as3:checked ~ .image-side .slides .a3 {
+      opacity: 1;
+    }
+
+
+    .slider-controls {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .slider-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--egerton-green-light);
+      cursor: pointer;
+      transition: background var(--transition-normal);
+    }
+
+    #as1:checked ~ .slider-controls .dot1,
+    #as2:checked ~ .slider-controls .dot2,
+    #as3:checked ~ .slider-controls .dot3 {
+      background: var(--egerton-green-dark);
+    }
+
+    /* Event calendar */
+    .event-calendar {
+      padding: 4rem 1rem;
+      background: var(--neutral-white);
+    }
+
+    .calendar-container {
+      max-width: 900px;
+      margin: 2rem auto 0;
+    }
+
+    .calendar-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      box-shadow: var(--shadow-md);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .calendar-table th {
+      background: var(--egerton-green-dark);
+      color: var(--neutral-white);
+      font-weight: bold;
+      padding: 15px;
+      text-align: left;
+    }
+
+    .calendar-table td {
+      padding: 12px 15px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .calendar-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .calendar-table tr:hover td {
+      background: var(--egerton-green-light);
+    }
+
+    /* Acknowledgements section */
+    .acknowledgements {
+      padding: 4rem 1rem;
+      background: linear-gradient(135deg, #f0f9f1, #e8f5e9);
+    }
+
+    .acknowledgements .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .acknowledgements p {
+      text-align: center;
+      max-width: 800px;
+      margin: 1.5rem auto 3rem;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: var(--neutral-gray);
+    }
+
+    .leaders {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+
+    .leader-card {
+      border-left: 4px solid var(--egerton-green-accent);
+      padding-left: 1.5rem;
+      background: var(--neutral-white);
+      border-radius: 8px;
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--transition-normal);
+    }
+
+    .leader-card:hover {
+      transform: translateX(5px);
+    }
+
+    .leader-card h3 {
+      color: var(--egerton-green-dark);
+      margin: 0.5rem 0;
+    }
+
+    .leader-card p {
+      color: var(--egerton-green-medium);
+      font-weight: bold;
+      margin: 0.25rem 0;
+    }
+
+    .leader-card blockquote {
+      margin: 1rem 0;
+      padding-left: 1rem;
+      border-left: 3px solid var(--egerton-green-light);
+      color: var(--neutral-gray);
+      font-style: italic;
+    }
+
+    /* Testimonials section */
+    .testimonials {
+      padding: 4rem 1rem;
+      background: var(--neutral-light);
+    }
+
+    .testimonial-list {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      max-width: 1200px;
+      margin: 2rem auto 0;
+    }
+
+    .testimonial {
+      background: var(--neutral-white);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: var(--shadow-md);
+      position: relative;
+      border: 1px solid var(--egerton-green-light);
+    }
+
+    .testimonial::before {
+      content: '"';
+      position: absolute;
+      top: 10px;
+      left: 15px;
+      font-size: 4rem;
+      color: var(--egerton-green-light);
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+
+    .testimonial p {
+      font-style: italic;
+      color: var(--neutral-gray);
+      margin-bottom: 1.5rem;
+      padding-left: 20px;
+    }
+
+    .testimonial h4 {
+      color: var(--egerton-green-dark);
+      margin: 0;
+      font-weight: bold;
+    }
+
+    /* Tickets section */
+    .tickets-section {
+      text-align: center;
+      padding: 4rem 1rem;
+      background: var(--egerton-green-dark);
+      color: var(--neutral-white);
+    }
+
+    .tickets-section h2 {
+      color: var(--neutral-white);
+      margin-bottom: 1rem;
+    }
+
+    .tickets-section p {
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    .ticket-btn {
+      background: var(--neutral-white);
+      color: var(--egerton-green-dark);
+      font-size: 1.1rem;
+      padding: 12px 35px;
+      border: 2px solid var(--neutral-white);
+      transition: all var(--transition-normal);
+    }
+
+    .ticket-btn:hover {
+      background: transparent;
+      color: var(--neutral-white);
+      transform: translateY(-2px);
+    }
+
+    /* Responsive design */
+    @media (max-width: 992px) {
+      .hero-content {
+        flex-direction: column;
+      }
+      
+      .hero-image, .hero-text {
+        width: 100%;
+        padding: 1.5rem;
+      }
+      
+      .hero-image img {
+        max-height: 60vh;
+      }
+      
+      .slider-wrapper {
+        flex-direction: column;
+        height: auto;
+      }
+      
+      .image-side {
+        width: 100%;
+        height: 350px;
+        border-radius: 0 0 15px 15px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-text h1 {
+        font-size: 2.2rem;
+      }
+      
+      .hero-text h2 {
+        font-size: 1.8rem;
+      }
+      
+      .hero-text p, .hero-tagline {
+        font-size: 1.1rem;
+      }
+      
+      .about-card img {
+        height: 180px;
+      }
+      
+      .slider-wrapper {
+        flex-direction: column;
+      }
+      
+      .image-side {
+        height: 300px;
+      }
+      
+      .nav-buttons label {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-text h1 {
+        font-size: 1.8rem;
+      }
+      
+      .hero-text h2 {
+        font-size: 1.5rem;
+      }
+      
+      .hero-text p, .hero-tagline {
+        font-size: 1rem;
+      }
+      
+      .about-list {
+        grid-template-columns: 1fr;
+      }
+      
+      .image-side {
+        height: 250px;
+      }
+      
+      .calendar-table {
+        font-size: 0.9rem;
+      }
+      
+      .calendar-table th, .calendar-table td {
+        padding: 8px 10px;
+      }
+    }
+  </style> -->
+</head>
+<body>
+
+  <iframe id="nav-frame" src="nav.html"></iframe>
+
+  <main>
+    <section class="hero-split" aria-labelledby="hero-heading">
+      <div class="hero-content">
+        <div class="hero-image">
+          <img src="love.jpeg" alt="Students celebrating cultural diversity at Egerton University">
+        </div>
+        <div class="hero-text">
+          <h1 id="hero-heading">Department of Applied Community Development Studies</h1>
+          <h2>Arts and Culture</h2>
+          <div class="hero-tagline">Preserving heritage. Inspiring creativity. Empowering identity.</div>
+          <p>Discover the beauty of our traditions and the art that defines who we are. Join us in celebrating the rich cultural tapestry that makes Egerton University unique.</p>
+          <a href="#about" class="btn">Learn More</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <div class="container">
+        <h2 class="about-title">What We Do</h2>
+        <ul class="about-list">
+          <li class="about-card">
+            <a href="cultural-day.html">
+              <img src="Cultural Day At School Ideas _ Twinkl.jpeg" alt="Cultural Day celebrations with students in traditional attire">
+              <h3>Cultural Day</h3>
+              <p>Celebrating the diversity and traditions that shape our identity.</p>
+            </a>
+          </li>
+          <li class="about-card">
+            <a href="attire.html">
+              <img src="Happy Holi Festival Images!.jpeg" alt="Traditional cultural attire display">
+              <h3>Cultural Fashion</h3>
+              <p>Showcasing traditional attire and modern interpretations.</p>
+            </a>
+          </li>
+          <li class="about-card">
+            <a href="art.html">
+              <img src="Ndebele Houses Art Project, Worksheets, & Art Sub Plans for Black History Month.jpeg" alt="Students creating cultural art projects">
+              <h3>Cultural Art</h3>
+              <p>Exploring artistic expressions rooted in culture.</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="about-slider-section">
+      <div class="container">
+        <div class="slider-wrapper">
+          <div class="text-side">
+            <h2>About Us</h2>
+            <p>The Department of Applied Community Development Studies at Egerton University empowers communities through research, innovation, and collaboration. We nurture leaders who understand the profound impact of cultural identity on community development.</p>
+            <a href="aboutus.html" class="btn">Learn More</a>
+            <div class="nav-buttons">
+              <label for="as1" aria-label="Previous slide">&laquo;</label>
+              <label for="as2" aria-label="Next slide">&raquo;</label>
+            </div>
+          </div>
+          <div class="image-side">
+            <div class="slides">
+              <img src="about4.jpeg" alt="Students participating in community development workshop" class="a1">
+              <img src="about5.jpeg" alt="Cultural heritage exhibition at Egerton University" class="a2">
+              <img src="about1.jpeg" alt="Community engagement activities with local leaders" class="a3">
+            </div>
+          </div>
+          <input type="radio" name="aboutslider" id="as1" checked>
+          <input type="radio" name="aboutslider" id="as2">
+          <input type="radio" name="aboutslider" id="as3">
+          <div class="slider-controls">
+            <label for="as1" class="slider-dot dot1" aria-label="Slide 1"></label>
+            <label for="as2" class="slider-dot dot2" aria-label="Slide 2"></label>
+            <label for="as3" class="slider-dot dot3" aria-label="Slide 3"></label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="event-calendar">
+      <div class="container">
+        <h2>Annual Cultural Events Calendar</h2>
+        <div class="calendar-container">
+          <table class="calendar-table">
+            <thead>
+              <tr>
+                <th scope="col">Month</th>
+                <th scope="col">Event</th>
+                <th scope="col">Venue</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>February</strong></td>
+                <td>Traditional Attire Expo</td>
+                <td>New Arts Theatre</td>
+              </tr>
+              <tr>
+                <td><strong>April</strong></td>
+                <td>Cultural Food Festival</td>
+                <td>Student Centre Grounds</td>
+              </tr>
+              <tr>
+                <td><strong>June</strong></td>
+                <td>Cultural Art Exhibition</td>
+                <td>TB Block Hall 3</td>
+              </tr>
+              <tr>
+                <td><strong>September</strong></td>
+                <td>Inter-Culture Dance Gala</td>
+                <td>Main Grounds</td>
+              </tr>
+              <tr>
+                <td><strong>November</strong></td>
+                <td>Great Egerton Cultural Day</td>
+                <td>Open Arena</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="acknowledgements">
+      <div class="container">
+        <h2>Special Appreciation</h2>
+        <p>We express our deepest gratitude to the Egerton University administration for their unwavering support and commitment to promoting culture, identity, and creativity among our students.</p>
+        <div class="leaders">
+          <div class="leader-card">
+            <h3>Prof. Isaac Kibwage</h3>
+            <p>Vice Chancellor — Egerton University</p>
+            <blockquote>"Culture is the heartbeat of our shared identity. We remain committed to nurturing it."</blockquote>
+          </div>
+          <div class="leader-card">
+            <h3>Prof. Jane Mwangi</h3>
+            <p>Director, Community Development Studies</p>
+            <blockquote>"Arts and heritage connect generations. Our mission is to keep them alive."</blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <div class="container">
+        <h2>What Students Say</h2>
+        <div class="testimonial-list">
+          <div class="testimonial">
+            <p>"The cultural day changed my perspective on identity. I felt truly seen."</p>
+            <h4>— Miriam, 3rd Year</h4>
+          </div>
+          <div class="testimonial">
+            <p>"Studying artistic expression helped me discover my creative purpose."</p>
+            <h4>— Daniel, 2nd Year</h4>
+          </div>
+          <div class="testimonial">
+            <p>"Egerton celebrates all cultures equally. That's powerful."</p>
+            <h4>— Amina, 4th Year</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tickets-section">
+      <div class="container">
+        <h2>Get Your Tickets</h2>
+        <p>Be part of Egerton's biggest cultural experience of the year. Join thousands of students, faculty, and community members in this celebration of diversity.</p>
+        <a href="tickets.html" class="ticket-btn btn">Buy Tickets</a>
+      </div>
+    </section>
+  </main>
+
+  <iframe id="footer-frame" src="footer.html"></iframe>
+
+</body>
+</html>
