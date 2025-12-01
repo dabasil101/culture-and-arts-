@@ -23,6 +23,17 @@
     color: #0a2e0a;
 }
 
+header {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  text-align: center;
+  padding: 0;     
+  background: none;  
+  border: none;      
+}
+
+
     .main-container {
       display: grid;
       grid-template-columns: 1fr;
@@ -33,17 +44,18 @@
     
     .heading{
        align-items: center;
-       background: var(--egerton-green-base);
+       background: linear-gradient(135deg, var(--green-light) 0%, var(--primary-green) 100%);
        padding: 60px 40px;
       color: white;
       padding: var(--section-padding);
       position: relative;
       overflow: hidden;
       min-height: 40vh;
-      max-width: 100;
+      width: 100%;
+      max-width: 100%;
       display: flex;
       align-items: center;
-    ;
+      margin: 0;
     }
 
     .heading h1 {
@@ -89,8 +101,8 @@
     }
 
     .quotes {
-      position: static;
-      width: 70%;
+      position: relative;
+      width: 100%;
       margin-right: 0px;
       margin-bottom: auto;
       
