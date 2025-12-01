@@ -4,49 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Department of Applied Community Development Studies</title>
+    <link rel="stylesheet" href="navAndFooter.css">
+    <link rel="stylesheet" href="style.css">
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body {
-            font-family: 'Georgia', serif;
-            background: #f4f6f4;
-            color: #222;
-            line-height: 1.7;
-        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        <!-- .nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(1,39,1,0.9);
-            color: white;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            height: 10vh;
-            box-shadow: 0 8px 12px rgba(0,0,0,0.4);
-        }
-        .nav img {
-            width: 56px;
-            height: 56px;
-            object-fit: contain;
-        }
-        nav a {
-            margin-left: 1.8rem;
-            color: #fff;
-            text-decoration: none;
-            font-size: 1.1rem;
-            transition: .4s;
-        }
-        nav a:hover { text-decoration: underline; } -->
 
         .hero {
             padding: 60px 20px;
-            background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
-                        url('https://images.unsplash.com/photo-1523050858586-38d7e220a454?ixlib=rb-4.0.3&auto=format&fit=crop&q=80');
+            background: var(--green-light);
             background-size: cover;
             background-position: center;
             min-height: 80vh;
@@ -90,7 +60,7 @@
             text-align: center;
             font-size: 1.15rem;
         }
-        .testimonials { background: #eef3ee; }
+        .testimonials { background: var(--green-lighter) }
         .cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
@@ -115,7 +85,7 @@
         }
         .card small { color: #666; }
 
-        .culture-section { background: white; }
+        .culture-section { background: var(); }
         .culture-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
@@ -193,17 +163,8 @@
 </head>
 <body>
 
-    <!-- <div class="nav">
-        <a href="home.html"><img src="Egerton logo.png" alt="Egerton University"></a>
-        <nav>
-            <a href="2.html">Home</a>
-            <a href="#aboutus">About Us</a>
-            <a href="#culture">Cultural Events</a>
-        </nav>
-    </div> -->
 
-
-      <nav aria-label="Main navigation">
+  <nav aria-label="Main navigation">
     <div class="nav-container">
       <div class="logo-section">
         <img src="logo.png" alt="Egerton University Logo" width="40" height="40">
@@ -223,7 +184,7 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Department of Applied Community Development Studies</h1>
+                <h1>About The Department of Applied Community Development Studies</h1>
                 <p>Empowering students through innovation, community outreach, and celebration of diverse cultural heritage at Egerton University</p>
                 <a href="#about">Explore More</a>
             </div>
@@ -270,21 +231,21 @@
             </p>
             <div class="culture-grid">
                 <div class="culture-card">
-                    <img src="WhatsApp Image 2025-11-13 at 07.17.10_c6f90265.jpg" alt="Cultural Week">
+                    <img src="pic1.png" alt="Cultural Week">
                     <div>
                         <h3>Cultural Week</h3>
                         <p>A vibrant celebration of Kenya’s 44+ tribes with food, attire, music, and dance.</p>
                     </div>
                 </div>
                 <div class="culture-card">
-                    <img src="cdance.jpeg" alt="Traditional Dance">
+                    <img src="about1.png" alt="Traditional Dance">
                     <div>
                         <h3>Traditional Performances</h3>
                         <p>Regular showcases of ethnic dances, poetry, and storytelling.</p>
                     </div>
                 </div>
                 <div class="culture-card">
-                    <img src="exhibition.jpeg" alt="Exhibitions">
+                    <img src="pic3.png" alt="Exhibitions">
                     <div>
                         <h3>Heritage Exhibitions</h3>
                         <p>Student-led displays of artifacts, attire, and cultural history.</p>
@@ -294,35 +255,33 @@
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h3>Egerton University</h3>
-                    <p>Department of Applied Community Development Studies</p>
-                    <p>P.O. Box 536-20115, Egerton, Kenya</p>
-                </div>
-                <div class="footer-col">
-                    <h3>Contact Us</h3>
-                    <a href="mailto:jeffersonchirp@gmail.com">jeffersonchirp@gmail.com</a>
-                    <p>Phone: +254 797 794 518</p>
-                    <p>Office: Faculty of Arts Building, Room 112</p>
-                </div>
-                <div class="footer-col">
-                    <h3>Follow Us</h3>
-                    <div class="social-icons">
-                        <a href="#"><img src="https://cdn.simpleicons.org/instagram/white" alt="Instagram"></a>
-                        <a href="#"><img src="https://cdn.simpleicons.org/whatsapp/white" alt="WhatsApp"></a>
-                        <a href="#"><img src="https://cdn.simpleicons.org/facebook/white" alt="Facebook"></a>
-                        <a href="#"><img src="https://cdn.simpleicons.org/twitter/white" alt="Twitter"></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2025 Egerton University • Department of Applied Community Development Studies. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
 
+  <footer aria-label="Site footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <img src="logo.png" alt="Egerton University Logo" width="50" height="50">
+        <div class="footer-info">
+          <h3>Egerton University</h3>
+          <p>Njoro, Nakuru County, Kenya</p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-icons" aria-label="Social media links">
+          <a href="https://instagram.com/egertonuniversity" target="_blank" aria-label="Instagram">
+            <img src="https://cdn.simpleicons.org/instagram" alt="Instagram" width="24" height="24">
+          </a>
+          <a href="https://wa.me/254703024000" target="_blank" aria-label="WhatsApp">
+            <img src="https://cdn.simpleicons.org/whatsapp" alt="WhatsApp" width="24" height="24">
+          </a>
+          <a href="https://t.me/egertonuniversity" target="_blank" aria-label="Telegram">
+            <img src="https://cdn.simpleicons.org/telegram" alt="Telegram" width="24" height="24">
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Egerton University — All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
