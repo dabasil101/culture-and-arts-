@@ -216,6 +216,43 @@ iframe {
 
 
 
+
+
+
+.float-info {
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  z-index: 1000;
+
+  background: var(--primary-green);
+  color: white;
+  padding: 12px 18px;
+  border: #000 2px;
+  border-radius: 20px;
+  font-weight: 600;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+  transition: var(--transition);
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: floatPulse 2.8s ease-in-out infinite;
+}
+
+.float-info:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.28);
+  cursor: pointer;
+  background: var(--green-dark);
+}
+
+
+
+
+
+
 .about-section {
   padding: var(--spacing-xl) 0;
   background-color: white;
