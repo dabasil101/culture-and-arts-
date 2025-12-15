@@ -6,36 +6,60 @@
   <meta name="description" content="Egerton University Department of Applied Community Development Studies - Arts and Culture">
   <title>Egerton University | Arts and Culture</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="navAndFooter.css">
+  <!-- <link rel="stylesheet" href="navAndFooter.css"> -->
+  <link rel="stylesheet" href=".//bootstrap-5.3.8-dist//css/bootstrap.css">
+  <script src="./nav.js"></script>
 </head>
 <body>
 
   <!-- <iframe id="nav-frame" src="nav.html"></iframe> -->
 
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top" aria-label="Main navigation" style="background-color: #063a1a; box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);">
+  <div class="container-fluid px-sm-3 px-md-4 px-lg-5">
 
-  <nav aria-label="Main navigation">
-    <div class="nav-container">
-      <div class="logo-section">
-        <img src="logo.png" alt="Egerton University Logo" width="40" height="40">
-        <span class="uni-name">Egerton University</span>
-      </div>
-      <div class="nav-links">
-        <a href="index.html" aria-current="page">Home</a>
-        <a href="aboutus.html">About</a>
-        <a href="art.html">Arts</a>
-        <a href="attire.html">Attire</a>
-        <a href="cultural-day.html">Cultural Day</a>
-        <a href="tickets.html">Tickets</a>
-      </div>
+    <div class="d-flex align-items-center me-auto" id="logo-and-search">
+      <a class="navbar-brand d-flex align-items-center me-3" href="index.html">
+        <img src="logo.png" alt="Egerton University Logo" name="logo-img" class="rounded-circle p-1 me-2 border border-warning" width="48" height="48" style="background-color: white; object-fit: contain;">
+        <span class="fs-4 fw-bold" name="uni-name" style="color: #ffffff; font-family: 'Playfair Display', serif;">Egerton University</span>
+      </a>
+
+      <div id="search-container">
+        </div>
     </div>
-  </nav>
 
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav gap-2 gap-lg-4 mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link text-white bg-opacity-10 rounded px-3 py-2 active" aria-current="page" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white rounded px-3 py-2" href="aboutus.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white rounded px-3 py-2" href="art.html">Arts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white rounded px-3 py-2" href="attire.html">Attire</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white rounded px-3 py-2" href="cultural-day.html">Cultural Day</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white rounded px-3 py-2" href="tickets.html">Tickets</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
 
   <main>
 
- 
+
 
     <section class="hero-split" aria-labelledby="hero-heading">
       <div class="hero-content">
@@ -51,7 +75,7 @@
         </div>
       </div>
     </section>
-  
+
   <a href="cultural-day.html" class="float-info">
     <p>Cultural Event</p>
   </a>

@@ -14,11 +14,11 @@
   --neutral-gray: #757575;
   --neutral-dark: #222222;
   --neutral-darker: #121212;
-  
+
   /* Typography */
   --font-primary: 'Playfair Display', 'Times New Roman', Times, serif;
   --font-secondary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  
+
   /* Spacing System */
   --space-xxs: 0.25rem;
   --space-xs: 0.5rem;
@@ -27,7 +27,7 @@
   --space-lg: 1.5rem;
   --space-xl: 2rem;
   --space-xxl: 3rem;
-  
+
   /* Effects */
   --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.08);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
@@ -141,7 +141,7 @@ nav {
   min-width: 85px;
 }
 
-.nav-links a:hover, 
+.nav-links a:hover,
 .nav-links a:focus {
   color: var(--neutral-white);
   background: rgba(255, 255, 255, 0.12);
@@ -356,7 +356,7 @@ footer::before {
   .nav-container {
     flex-wrap: wrap;
   }
-  
+
   .nav-links {
     order: 3;
     width: 100%;
@@ -364,18 +364,18 @@ footer::before {
     margin-top: var(--space-sm);
     gap: var(--space-md);
   }
-  
+
   .footer-container {
     flex-direction: column;
     text-align: center;
     gap: var(--space-xl);
   }
-  
+
   .footer-left {
     align-items: center;
     text-align: center;
   }
-  
+
   .footer-links {
     align-items: center;
   }
@@ -385,30 +385,30 @@ footer::before {
   nav {
     padding: var(--space-xs) var(--space-sm);
   }
-  
+
   .logo-section {
     min-width: auto;
   }
-  
+
   .uni-name {
     font-size: clamp(1.1rem, 3vw, 1.4rem);
   }
-  
+
   .nav-links {
     gap: var(--space-md);
     margin-top: var(--space-xs);
   }
-  
+
   .nav-links a {
     font-size: clamp(0.9rem, 2.5vw, 1rem);
     padding: var(--space-xxs) var(--space-sm);
     min-width: 70px;
   }
-  
+
   .hamburger {
     display: block;
   }
-  
+
   .nav-links {
     display: none;
     width: 100%;
@@ -421,20 +421,20 @@ footer::before {
     border-radius: var(--border-radius-lg);
     box-shadow: var(--shadow-lg);
   }
-  
+
   .nav-links.show {
     display: flex;
   }
-  
+
   .footer-icons {
     gap: var(--space-md);
   }
-  
+
   .footer-icons a {
     width: 48px;
     height: 48px;
   }
-  
+
   .footer-bottom {
     font-size: clamp(0.8rem, 2vw, 0.9rem);
   }
@@ -444,39 +444,39 @@ footer::before {
   .nav-container {
     padding: 0 var(--space-xs);
   }
-  
+
   .logo-section img {
     height: 42px;
     width: 42px;
   }
-  
+
   .uni-name {
     font-size: clamp(1rem, 4vw, 1.3rem);
   }
-  
+
   .footer-left img {
     width: 60px;
     height: 60px;
   }
-  
+
   .footer-info h3 {
     font-size: clamp(1.2rem, 4vw, 1.5rem);
   }
-  
+
   .footer-info p {
     font-size: clamp(0.9rem, 3.5vw, 1rem);
   }
-  
+
   .footer-icons a {
     width: 44px;
     height: 44px;
   }
-  
+
   .footer-icons img {
     width: 24px;
     height: 24px;
   }
-  
+
   .footer-bottom {
     padding: var(--space-sm) 0;
   }
