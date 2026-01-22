@@ -8,6 +8,18 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="navAndFooter.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Segoe+UI:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="./nav.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    const menu = document.getElementById('navMenu');
+    if(menu.classList.contains('show')) {
+      new bootstrap.Collapse(menu).toggle();
+    }
+  });
+});
+  </script>
 
   <style>
 
@@ -231,23 +243,47 @@
 </head>
 <body>
 
-  <nav aria-label="Main navigation">
-    <div class="nav-container">
-      <div class="logo-section">
-        <img src="logo.png" alt="Egerton University Logo" width="40" height="40">
-        <span class="uni-name">Egerton University</span>
-      </div>
-      <div class="nav-links">
-        <a href="index.html" aria-current="page">Home</a>
-        <a href="aboutus.html">About</a>
-        <a href="art.html">Arts</a>
-        <a href="attire.html">Attire</a>
-        <a href="cultural-day.html">Cultural Day</a>
-        <a href="tickets.html">Tickets</a>
-      </div>
-    </div>
-  </nav>
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top" aria-label="Main navigation" style="background-color: #063a1a; box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);">
+  <div class="container-fluid px-sm-3 px-md-4 px-lg-5">
 
+    <div class="d-flex align-items-center me-auto" id="logo-and-search">
+      <a class="navbar-brand d-flex align-items-center me-3" href="index.html">
+        <img src="logo.png" alt="Egerton University Logo" name="logo-img" class="rounded-circle p-1 me-2 border border-warning" width="48" height="48" style="background-color: white; object-fit: contain;">
+        <span class="fs-4 fw-bold" name="uni-name" style="color: #ffffff; font-family: 'Playfair Display', serif;">Egerton University</span>
+      </a>
+
+      <div id="search-container"></div>
+
+    </div>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav gap-2 gap-lg-4 mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link text-white bg-opacity-10 rounded px-3 py-2 active" aria-current="page" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white rounded px-3 py-2" href="aboutus.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white rounded px-3 py-2" href="art.html">Arts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white rounded px-3 py-2" href="attire.html">Attire</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white rounded px-3 py-2" href="cultural-day.html">Cultural Day</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white rounded px-3 py-2" href="tickets.html">Tickets</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
   <header>
   <div class="heading">
      <div class="textcontent">
