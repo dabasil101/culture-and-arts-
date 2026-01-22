@@ -12,7 +12,6 @@
 </head>
 <body>
 
-  <!-- <iframe id="nav-frame" src="nav.html"></iframe> -->
 
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top" aria-label="Main navigation" style="background-color: #063a1a; box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);">
   <div class="container-fluid px-sm-3 px-md-4 px-lg-5">
@@ -23,8 +22,8 @@
         <span class="fs-4 fw-bold" name="uni-name" style="color: #ffffff; font-family: 'Playfair Display', serif;">Egerton University</span>
       </a>
 
-      <div id="search-container">
-        </div>
+      <<div id="search-container"></div>
+
     </div>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -124,9 +123,9 @@
           </div>
           <div class="image-side">
             <div class="slides">
-              <img src="about4.jpeg" alt="Students participating in community development workshop" class="a1">
-              <img src="about5.jpeg" alt="Cultural heritage exhibition at Egerton University" class="a2">
-              <img src="about1.jpeg" alt="Community engagement activities with local leaders" class="a3">
+              <img src="about4.png" alt="Students participating in community development workshop" class="a1">
+              <img src="about2.png" alt="Cultural heritage exhibition at Egerton University" class="a2">
+              <img src="about1.png" alt="Community engagement activities with local leaders" class="a3">
             </div>
           </div>
           <input type="radio" name="aboutslider" id="as1" checked>
@@ -233,79 +232,97 @@
     </section>
   </main>
 
-  <footer aria-label="Site footer">
-    <div class="footer-container">
-      <div class="footer-left">
-        <img src="logo.png" alt="Egerton University Logo" width="50" height="50">
-        <div class="footer-info">
-          <h3>Egerton University</h3>
-          <p>Njoro, Nakuru County, Kenya</p>
+<footer class="text-white mt-5" aria-label="Site footer"
+        style="background-color: #063a1a; box-shadow: 0 -0.5rem 1rem rgba(0, 0, 0, 0.15);">
+
+  <div class="container-fluid px-sm-3 px-md-4 px-lg-5 py-4">
+
+    <div class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-4">
+
+      <div class="d-flex align-items-center gap-3">
+        <img src="logo.png"
+          alt="Egerton University Logo"
+          width="48"
+          height="48"
+          class="rounded-circle p-1 border border-warning"
+          style="background-color: white; object-fit: contain;">
+
+        <div>
+          <h5 class="mb-1 fw-bold" style="font-family: 'Playfair Display', serif;">
+            Egerton University
+          </h5>
+          <p class="mb-0 small opacity-75">
+            Njoro, Nakuru County, Kenya
+          </p>
         </div>
       </div>
-      <div class="footer-links">
-        <div class="footer-icons" aria-label="Social media links">
-          <a href="https://instagram.com/egertonuniversity" target="_blank" aria-label="Instagram">
-            <img src="https://cdn.simpleicons.org/instagram" alt="Instagram" width="24" height="24">
-          </a>
-          <a href="https://wa.me/254703024000" target="_blank" aria-label="WhatsApp">
-            <img src="https://cdn.simpleicons.org/whatsapp" alt="WhatsApp" width="24" height="24">
-          </a>
-          <a href="https://t.me/egertonuniversity" target="_blank" aria-label="Telegram">
-            <img src="https://cdn.simpleicons.org/telegram" alt="Telegram" width="24" height="24">
-          </a>
-        </div>
+
+      <div class="d-flex align-items-center gap-3" aria-label="Social media links">
+        <a href="https://instagram.com/egertonuniversity" target="_blank" aria-label="Instagram"
+          class="text-white opacity-75 hover-opacity-100">
+          <img src="https://cdn.simpleicons.org/instagram/ffffff" width="24" height="24" alt="Instagram">
+        </a>
+
+        <a href="https://wa.me/254703024000" target="_blank" aria-label="WhatsApp"
+          class="text-white opacity-75 hover-opacity-100">
+          <img src="https://cdn.simpleicons.org/whatsapp/ffffff" width="24" height="24" alt="WhatsApp">
+        </a>
+
+        <a href="https://t.me/egertonuniversity" target="_blank" aria-label="Telegram"
+            class="text-white opacity-75 hover-opacity-100">
+          <img src="https://cdn.simpleicons.org/telegram/ffffff" width="24" height="24" alt="Telegram">
+        </a>
       </div>
+
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 Egerton University — All rights reserved.</p>
-    </div>
-  </footer>
-  <!-- <iframe id="footer-frame" src="footer.html"></iframe> -->
+  </div>
+
+  <div class="text-center py-3 border-top border-light border-opacity-10">
+    <small class="opacity-75">
+      &copy; 2025 Egerton University — All rights reserved.
+    </small>
+  </div>
+</footer>
+
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
 
-  var nav = document.querySelector(".nav-container");
-  var searchInput = document.createElement("input");
-  searchInput.type = "text";
-  searchInput.placeholder = "Search activities...";
-  searchInput.style.padding = "6px";
-  searchInput.style.marginLeft = "20px";
 
-  nav.appendChild(searchInput);
+searchInput.addEventListener("keyup", function () {
+  const query = searchInput.value.toLowerCase().trim();
+  resultsBox.innerHTML = "";
 
-  var cards = document.querySelectorAll(".about-card");
+  if (!query) {
+    resultsBox.style.display = "none";
+    return;
+  }
 
-  searchInput.addEventListener("keyup", function () {
-    var query = searchInput.value.toLowerCase();
+  const matches = siteIndex.filter(page =>
+    page.title.toLowerCase().includes(query) ||
+    page.keywords.includes(query)
+  );
 
-    cards.forEach(function (card) {
-      var text = card.innerText.toLowerCase();
-      if (text.includes(query)) {
-        card.style.display = "block";
-      } else {
-        card.style.display = "none";
-      }
+  if (matches.length === 0) {
+    resultsBox.innerHTML = "<div style='padding:8px'>No results</div>";
+  } else {
+    matches.forEach(page => {
+      const item = document.createElement("div");
+      item.textContent = page.title;
+      item.style.padding = "8px";
+      item.style.cursor = "pointer";
+
+      item.addEventListener("click", () => {
+        window.location.href = page.url;
+      });
+
+      resultsBox.appendChild(item);
     });
-  });
+  }
 
-  var radios = document.querySelectorAll("input[name='aboutslider']");
-  var index = 0;
-  var total = radios.length;
-
-  setInterval(function () {
-    radios[index].checked = false;
-    index = (index + 1) % total;
-    radios[index].checked = true;
-  }, 4000);
-
-  var ticketButton = document.querySelector(".ticket-btn");
-
-  ticketButton.addEventListener("click", function () {
-    alert("Redirecting to ticket purchase page");
-  });
-
+  resultsBox.style.display = "block";
 });
+
+
 </script>
 
 </body>

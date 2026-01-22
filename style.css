@@ -4,19 +4,19 @@
   --green-lighter: #C8E6C9;
   --green-dark: #2E7D32;
   --green-darker: #1B5E20;
-  --accent-gold: #0b5f00;             
-  --off-white: #FAFAFA;       
+  --accent-gold: #0b5f00;
+  --off-white: #FAFAFA;
   --light-gray: #E0E0E0;
   --dark-gray: #212121;
-  
+
   --font-main: 'Segoe UI', system-ui, -apple-system, sans-serif;
   --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
-  
+
   --spacing-sm: 0.75rem;
   --spacing-md: 1.5rem;
   --spacing-lg: 3rem;
   --spacing-xl: 4.5rem;
-  
+
   --shadow-sm: 0 4px 6px rgba(0,0,0,0.05);
   --shadow-md: 0 10px 20px rgba(0,0,0,0.1);
   --shadow-lg: 0 15px 30px rgba(0,0,0,0.15);
@@ -35,7 +35,7 @@ body {
   color: var(--dark-gray);
   background-color: var(--off-white);
   overflow-x: hidden;
-  background-image: 
+  background-image:
     radial-gradient(var(--green-lighter) 1px, transparent 1px),
     radial-gradient(var(--green-lighter) 1px, transparent 1px);
   background-size: 30px 30px;
@@ -1011,27 +1011,27 @@ blockquote::before {
     grid-template-columns: 1fr;
     text-align: center;
   }
-  
+
   .hero-image {
     order: -1;
     max-width: 90%;
     margin: 0 auto;
     height: 450px;
   }
-  
+
   .hero-text {
     align-items: center;
   }
-  
+
   .hero-text h1 {
     max-width: 100%;
   }
-  
+
   .nav-buttons {
     display: block;
     margin-top: var(--spacing-md);
   }
-  
+
   .nav-buttons label {
     display: inline-block;
     width: 50px;
@@ -1044,7 +1044,7 @@ blockquote::before {
     font-size: 1.8rem;
     transition: var(--transition);
   }
-  
+
   .nav-buttons label:hover {
     background: rgba(255,255,255,0.3);
     transform: scale(1.1);
@@ -1056,26 +1056,26 @@ blockquote::before {
     --spacing-lg: 2rem;
     --spacing-xl: 3.5rem;
   }
-  
+
   .hero-split {
     min-height: auto;
     padding: var(--spacing-xl) 0;
   }
-  
+
   .hero-image {
     height: 350px;
   }
-  
+
   .slides img {
     height: 350px;
   }
-  
+
   .about-list,
   .testimonial-list,
   .leaders {
     grid-template-columns: 1fr;
   }
-  
+
   .calendar-table {
     display: block;
     overflow-x: auto;
@@ -1086,29 +1086,29 @@ blockquote::before {
   .hero-text h1 {
     font-size: 2.2rem;
   }
-  
+
   .hero-tagline {
     font-size: 1.3rem;
   }
-  
+
   .btn {
     width: 100%;
     padding: 1rem;
   }
-  
+
   .ticket-btn {
     width: 90%;
     font-size: 1.2rem;
     padding: 1rem;
-    
+
   }
-  
+
   .calendar-table th,
   .calendar-table td {
     padding: 0.8rem 0.5rem;
     font-size: 0.95rem;
   }
-  
+
   .testimonial p {
     font-size: 1rem;
     padding: 1rem;
@@ -1130,7 +1130,7 @@ blockquote::before {
     animation: none !important;
     transform: none !important;
   }
-  
+
   .hero-image,
   .image-side,
   .about-card,
@@ -1152,7 +1152,7 @@ blockquote::before {
     color: #000 !important;
     background-image: none !important;
   }
-  
+
   .btn,
   .ticket-btn,
   iframe,
@@ -1160,19 +1160,19 @@ blockquote::before {
   .nav-buttons {
     display: none !important;
   }
-  
+
   section {
     page-break-inside: avoid;
     margin-bottom: 25px;
     box-shadow: none !important;
     transform: none !important;
   }
-  
+
   img {
     max-width: 100% !important;
     page-break-inside: avoid;
   }
-  
+
   h1, h2, h3 {
     color: #000 !important;
     text-shadow: none !important;

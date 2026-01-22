@@ -1,225 +1,287 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-		<meta  charset="UTF-8">
-		<meta name="viewport" content="width=device-width , initial-scale=1.0">
-		<link rel="stylesheet" href="style.css"/>
-		<title>Arts Page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Egerton University Arts Week</title>
+<link rel="stylesheet" href=".//bootstrap-5.3.8-dist//css/bootstrap.css">
 
-    <style>
-      *,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+
+<style>
+:root {
+  --green-dark: #1e5631;
+  --green-light: #e8f5e9;
+  --green-lighter: #f3faf5;
+  --gold: #d4af37;
+  --text-dark: #2b3e50;
+  --text-muted: #555;
+  --shadow-soft: 0 10px 25px rgba(0,0,0,0.12);
+  --shadow-strong: 0 25px 50px rgba(0,0,0,0.25);
 }
 
 body {
-  background: #fdfdfd;
-  color: #1a1a1a;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  line-height: 1.6;
-  padding: 1.5rem;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #fdfdfd 0%, #f4f4f9 100%);
+  font-family: "Segoe UI", sans-serif;
+  background: #f6f8f7;
+  color: var(--text-dark);
+  line-height: 1.7;
 }
 
-h1, h2, h3 {
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  margin-bottom: 1rem;
-  background: linear-gradient(90deg, #1a1a1a, #0066ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.page-section {
+  background: #fff;
+  padding: 80px 30px;
+  margin-bottom: 80px;
+  border-radius: 25px;
+  box-shadow: var(--shadow-soft);
 }
 
-p {
-  max-width: 66ch;
-  margin-bottom: 1.5rem;
-  font-size: 1.1rem;
-  opacity: 0.9;
+.page-section h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  text-align: center;
+  color: var(--green-dark);
+  margin-bottom: 25px;
 }
 
-a {
-  color: #0066ff;
-  text-decoration: none;
-  position: relative;
-  transition: 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+.page-section h2::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 4px;
+  background: var(--gold);
+  margin: 15px auto 0;
+  border-radius: 2px;
 }
 
-a::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -4px;
-  left: 0;
-  background: #0066ff;
-  transition: 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+.page-section p {
+  max-width: 900px;
+  margin: 0 auto 20px;
+  color: var(--text-muted);
+  font-size: 1.05rem;
 }
 
-a:hover::after {
-  width: 100%;
-}
-
-.card {
-  background: white;
-  padding: 2rem;
-  border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
-  transition: 0.32s cubic-bezier(0.4, 0, 0.2, 1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.8);
-}
-
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-}
-
-button, .btn {
-  background: #0066ff;
-  color: white;
-  border: none;
-  padding: 0.9rem 2rem;
-  border-radius: 999px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.32s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 16px rgba(0, 102, 255, 0.3);
-}
-
-button:hover, .btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 102, 255, 0.4);
-}
-
-.float {
-  animation: float 6s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
-}
-
-.cards {
+.activity-grid {
   display: grid;
-  place-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr));
-  gap: 2rem;
-  padding: 3rem 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 25px;
+  margin-top: 40px;
 }
-    </style>
+
+.activity-card {
+  background: var(--green-light);
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: var(--shadow-soft);
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.activity-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-strong);
+}
+
+.activity-card h4 {
+  color: var(--green-dark);
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 40px;
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+}
+
+.schedule-table th,
+.schedule-table td {
+  padding: 18px;
+}
+
+.schedule-table th {
+  background: var(--green-dark);
+  color: white;
+}
+
+.schedule-table tr:nth-child(even) {
+  background: var(--green-lighter);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: var(--shadow-soft);
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.gallery img:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-strong);
+}
+</style>
+
 </head>
+
 <body>
 
-    <iframe id="nav-frame" src="nav.html"></iframe>
 
-    <header>
-        <h1> Egerton University Arts Week </h1>
-        <p>Organized by the Department of Applied Community Development Studies ,</p>
-    </header>
-    
-    <nav>
-        <a href="#introduction">Introduction</a>
-        <a href="#activities">Activities</a>
-        <a href="#schedule">Schedule</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#contact">Contact</a>
-    </nav>
-    
-    <div class="container">
-        <section id="introduction">
-            <h2>Introduction to Arts Week</h2>
-            <p>Arts Week is an annual celebration at Egerton University, hosted in collaboration with the Faculty of Education and Community Development Studies (FEDCOS), particularly the Department of Applied Community Development Studies (ACDS). This event aligns with our vision to be a center of excellence in education and community development by fostering creativity, cultural expression, and community engagement through the arts.</p>
-            <p>Inspired by the university's Culture Week, Arts Week focuses on artistic talents, performances, and community-building activities. It brings together students, faculty, and the local community to showcase diverse artistic expressions, promote cultural diversity, and highlight the role of arts in societal development. The event typically features a blend of traditional and contemporary arts, emphasizing co-cultures born from community interactions.</p>
-            <p>Arts Week not only celebrates vibrancy in creative expression but also supports the Kenya Universities Performing Arts Association (KUPAA) initiatives, shaping societal development through performance arts.</p>
-        </section>
-        
-        <section id="activities">
-            <h2>Activities and Highlights</h2>
-            <p>Arts Week offers a rich array of activities designed to engage participants in meaningful ways. Here are some key highlights:</p>
-            <ul class="activity-list">
-                <li><strong>Performances:</strong> Captivating songs, dances, poetry, and theater performances that highlight cultural diversity and community stories.</li>
-                <li><strong>Workshops:</strong> Interactive sessions on community arts, creative writing, visual arts, and cultural heritage preservation, led by faculty from the ACDS department.</li>
-                <li><strong>Exhibitions:</strong> Art galleries showcasing student and community artwork, including paintings, sculptures, and digital media.</li>
-                <li><strong>Competitions:</strong> Talent shows, including Mr. and Miss Egerton University, focusing on artistic talents and community representation.</li>
-                <li><strong>Community Engagement:</strong> Collaborative events with Nakuru County Government and local communities to promote cultural exchange and development strategies.</li>
-                <li><strong>Panel Discussions:</strong> Talks on the role of arts in community development, featuring experts from FEDCOS and external stakeholders.</li>
-            </ul>
-        </section>
-        
-        <section id="schedule">
-            <h2>Event Schedule</h2>
-            <p>Arts Week is typically held in the 2nd week of December, but dates vary annually.   Check the university calendar for the latest updates.</p>
-            <table class="schedule-table">
-                <thead>
-                    <tr>
-                        <th>Day</th>
-                        <th>Activities</th>
-                        <th>Time</th>
-                        <th>Location</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Tuesday</td>
-                        <td>Opening Ceremony & Cultural Performances</td>
-                        <td>9:00 AM - 12:00 PM</td>
-                        <td>Main Auditorium</td>
-                    </tr>
-                    <tr>
-                        <td>Wednesday</td>
-                        <td>Art Workshops & Exhibitions</td>
-                        <td>10:00 AM - 4:00 PM</td>
-                        <td>FEDCOS Building</td>
-                    </tr>
-                    <tr>
-                        <td>Thursday</td>
-                        <td>Poetry and Theater Sessions</td>
-                        <td>2:00 PM - 6:00 PM</td>
-                        <td>Outdoor Amphitheater</td>
-                    </tr>
-                    <tr>
-                        <td>Friday</td>
-                        <td>Community Engagement Activities & Panel Discussions</td>
-                        <td>9:00 AM - 5:00 PM</td>
-                        <td>Community Center</td>
-                    </tr>
-                    <tr>
-                        <td>Saturday</td>
-                        <td>Talent Competitions & Closing Ceremony</td>
-                        <td>10:00 AM - 8:00 PM</td>
-                        <td>Main Hall</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-        
-        <section id="gallery">
-            <h2>Gallery</h2>
-            <p>Explore highlights from past Arts Weeks. </p>
-            <div class="gallery">
-                <img src="/Happy Holi Festival Images!.jpeg"alt="Cultural Dance" width="300px" height="150px">
-                <img src="/about5.jpeg" alt="Art Exhibition" width="300px" height="150px">
-                <!-- <img src="/" alt="Talent Show"> -->
-            </div>
-        </section>
-        
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <p>For more information about Arts Week or to get involved, contact the Department of Applied Community Development Studies:</p>
-            <p>Email: acds@egerton.ac.ke<br>
-            Phone: +254-123-456789<br>
-            Website: <a href="https://acds.egerton.ac.ke"/>acds.egerton.ac.ke</a></p>
-        </section>
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top" aria-label="Main navigation" style="background-color: #063a1a; box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);">
+  <div class="container-fluid px-sm-3 px-md-4 px-lg-5">
+
+    <div class="d-flex align-items-center me-auto" id="logo-and-search">
+      <a class="navbar-brand d-flex align-items-center me-3" href="index.html">
+        <img src="logo.png" alt="Egerton University Logo" name="logo-img" class="rounded-circle p-1 me-2 border border-warning" width="48" height="48" style="background-color: white; object-fit: contain;">
+        <span class="fs-4 fw-bold" name="uni-name" style="color: #ffffff; font-family: 'Playfair Display', serif;">Egerton University</span>
+      </a>
+
+      <div id="search-container">
+        </div>
     </div>
-    
-  <iframe id="footer-frame" src="footer.html" ></iframe>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav gap-2 gap-lg-4 mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link text-white bg-opacity-10 rounded px-3 py-2 active" aria-current="page" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white rounded px-3 py-2" href="aboutus.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white rounded px-3 py-2" href="art.html">Arts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white rounded px-3 py-2" href="attire.html">Attire</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white rounded px-3 py-2" href="cultural-day.html">Cultural Day</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white rounded px-3 py-2" href="tickets.html">Tickets</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container">
+
+  <section class="page-section" id="introduction">
+    <h2>Introduction</h2>
+    <p>
+      Arts Week is an annual celebration at Egerton University hosted by the
+      Department of Applied Community Development Studies (ACDS) under FEDCOS.
+      It promotes creativity, cultural expression, and community engagement.
+    </p>
+    <p>
+      Inspired by Culture Week, Arts Week blends traditional and contemporary
+      art forms to highlight the role of creativity in social development.
+    </p>
+  </section>
+
+  <section class="page-section" id="activities">
+    <h2>Activities & Highlights</h2>
+
+    <div class="activity-grid">
+      <div class="activity-card">
+        <h4>Performances</h4>
+        <p>Songs, dances, poetry, theatre, and live artistic showcases.</p>
+      </div>
+      <div class="activity-card">
+        <h4>Workshops</h4>
+        <p>Hands-on sessions in community arts, creative writing, and visual arts.</p>
+      </div>
+      <div class="activity-card">
+        <h4>Exhibitions</h4>
+        <p>Student and community artwork displays throughout the week.</p>
+      </div>
+      <div class="activity-card">
+        <h4>Competitions</h4>
+        <p>Talent showcases and cultural contests encouraging participation.</p>
+      </div>
+      <div class="activity-card">
+        <h4>Community Engagement</h4>
+        <p>Collaboration with local communities through arts-based initiatives.</p>
+      </div>
+      <div class="activity-card">
+        <h4>Panel Discussions</h4>
+        <p>Conversations on arts, identity, and sustainable development.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section" id="schedule">
+    <h2>Event Schedule</h2>
+    <p>Arts Week is typically held during the second week of December.</p>
+
+    <table class="schedule-table">
+      <thead>
+        <tr>
+          <th>Day</th>
+          <th>Activities</th>
+          <th>Time</th>
+          <th>Location</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Tuesday</td>
+          <td>Opening Ceremony & Performances</td>
+          <td>9:00 AM – 12:00 PM</td>
+          <td>Main Auditorium</td>
+        </tr>
+        <tr>
+          <td>Wednesday</td>
+          <td>Workshops & Exhibitions</td>
+          <td>10:00 AM – 4:00 PM</td>
+          <td>FEDCOS Building</td>
+        </tr>
+        <tr>
+          <td>Thursday</td>
+          <td>Poetry & Theatre</td>
+          <td>2:00 PM – 6:00 PM</td>
+          <td>Amphitheatre</td>
+        </tr>
+        <tr>
+          <td>Friday</td>
+          <td>Panels & Community Engagement</td>
+          <td>9:00 AM – 5:00 PM</td>
+          <td>Community Center</td>
+        </tr>
+        <tr>
+          <td>Saturday</td>
+          <td>Talent Shows & Closing Ceremony</td>
+          <td>10:00 AM – 8:00 PM</td>
+          <td>Main Hall</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="page-section" id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="/Happy Holi Festival Images!.jpeg" alt="Cultural Dance">
+      <img src="/about5.jpeg" alt="Art Exhibition">
+    </div>
+  </section>
+
+</div>
 
 </body>
 </html>
